@@ -20,21 +20,22 @@
  * SOFTWARE.
  */
 
-package com.microsoft.tooling.msservices.serviceexplorer.azure.container;
+package com.microsoft.azuretools.core.mvp.model.container.pojo;
 
-import com.microsoft.azuretools.core.mvp.ui.base.MvpView;
-import com.microsoft.azuretools.core.mvp.ui.containerregistry.ContainerRegistryProperty;
+import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public interface ContainerRegistryPropertyMvpView extends MvpView {
+public class Tag {
 
-    void onReadProperty(String sid, String id);
+    @SerializedName("tags")
+    private ArrayList<String> tags;
 
-    void showProperty(ContainerRegistryProperty property);
+    public ArrayList<String> getTags() {
+        return tags;
+    }
 
-    void listRepo(List<String> repos);
-
-    void listTag(List<String> tags);
-
+    public void setTags(ArrayList<String> tags) {
+        this.tags = tags;
+    }
 }
